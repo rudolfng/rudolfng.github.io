@@ -8,20 +8,20 @@
     </head>
     <body>
     <div id="app">
-    {{message}}
+        <el-button @click="visible = true">Button</el-button>
+    <el-dialog v-model="visible" title="Hello world">
+      <p>Try Element</p>
+    </el-dialog>
     </div>
     <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
-<<<<<<< HEAD
     <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-=======
->>>>>>> 7ac7ebfd9974fdc6f97c5a231ec89ef945f6eb9c
     <script>
-        var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Hello Vue!'
-  }
-})
+        new Vue({
+      el: '#app',
+      data: function(){
+        return { visible: false }
+      }
+    })
     </script>
     </body>
 </html>
