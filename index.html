@@ -1,21 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
-    </head>
-    <body>
-    <div id="app">
-        <el-button @click="visible = true">Button</el-button>
-    <el-dialog v-model="visible" title="Hello world">
-      <p>Try Element</p>
-    </el-dialog>
-    </div>
-    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
-    <script src="https://rawgit.com/rudolfng/rudolfng.github.io/master/main.js">
-    </script>
-    </body>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <header>
+    Hello there
+  </header>
+  <button onclick="getLocation()">Get Location</button>
+  <p id="demo">not working</p>
+
+  <script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    x.innerHTML = "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+      </script>
+</body>
+
 </html>
